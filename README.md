@@ -1,4 +1,5 @@
 # SDG2
+El objetivo es desarrollar un sistema completamente funcional de un sistema de recepción y transmisión basado en comunicación infrarroja. Como proyecto base, se propone que dicho sistema sirva como control remoto y receptor de un sistema de control de luces LED RGB.
 Es es el proyecto base del curso 2022-2023 para los alumnos de la asignatura de Sistemas Digitales II. 
 Los códigos están parcialmente documentados para que pueda ser interpretado por Doxygen a fin de que pueda tener ejemplos de cómo hacer la documentación de su propio código.
 

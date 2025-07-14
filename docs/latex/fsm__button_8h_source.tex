@@ -1,0 +1,33 @@
+\hypertarget{fsm__button_8h_source}{}\doxysection{fsm\+\_\+button.\+h}
+\label{fsm__button_8h_source}\index{sdg/projects/retina-\/main-\/definitivo/common/include/fsm\_button.h@{sdg/projects/retina-\/main-\/definitivo/common/include/fsm\_button.h}}
+\mbox{\hyperlink{fsm__button_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ FSM\_BUTTON\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ FSM\_BUTTON\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ Standard\ C\ includes\ */}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{/*\ Other\ includes\ */}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fsm_8h}{fsm.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ Function\ prototypes\ and\ explanation\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ \ Return\ the\ duration\ of\ the\ last\ button\ press.*/}}
+\DoxyCodeLine{00023\ uint32\_t\ fsm\_button\_get\_duration\ (\mbox{\hyperlink{structfsm__t}{fsm\_t}}*\ p\_this);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/*Initialize\ a\ button\ FSM.*/}}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ fsm\_button\_init\ (\mbox{\hyperlink{structfsm__t}{fsm\_t}}*\ p\_this,\ uint32\_t\ debounce\_time,\ uint32\_t\ button\_id);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/*Create\ a\ new\ button\ FSM.\ */}}
+\DoxyCodeLine{00029\ \mbox{\hyperlink{structfsm__t}{fsm\_t}}*\ fsm\_button\_new\ \ (uint32\_t\ debounce\_time,\ uint32\_t\ button\_id);\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ \ Return\ the\ duration\ of\ the\ last\ button\ press.*/}}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ fsm\_button\_reset\_duration\ \ (\mbox{\hyperlink{structfsm__t}{fsm\_t}}*\ p\_this);\ \ \ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

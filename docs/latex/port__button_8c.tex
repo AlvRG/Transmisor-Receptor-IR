@@ -1,0 +1,68 @@
+\hypertarget{port__button_8c}{}\doxysection{sdg/projects/retina-\/main-\/definitivo/port/nucleo\+\_\+stm32f446re/src/port\+\_\+button.c File Reference}
+\label{port__button_8c}\index{sdg/projects/retina-\/main-\/definitivo/port/nucleo\_stm32f446re/src/port\_button.c@{sdg/projects/retina-\/main-\/definitivo/port/nucleo\_stm32f446re/src/port\_button.c}}
+
+
+File containing functions related to the HW of the button FSM.  
+
+
+{\ttfamily \#include \char`\"{}port\+\_\+button.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structport__button__hw__t}{port\+\_\+button\+\_\+hw\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{port__button_8c_a8a60ec4a29c03b384c975a7780082ca3}\label{port__button_8c_a8a60ec4a29c03b384c975a7780082ca3}} 
+void {\bfseries port\+\_\+button\+\_\+init} (uint32\+\_\+t button\+\_\+id)
+\item 
+\mbox{\Hypertarget{port__button_8c_aba3babbb7f811461f16f7ab309ee660b}\label{port__button_8c_aba3babbb7f811461f16f7ab309ee660b}} 
+bool {\bfseries port\+\_\+button\+\_\+is\+\_\+pressed} (uint32\+\_\+t button\+\_\+id)
+\item 
+\mbox{\Hypertarget{port__button_8c_a3721657d1ac1da581da5efec19581b7d}\label{port__button_8c_a3721657d1ac1da581da5efec19581b7d}} 
+uint32\+\_\+t {\bfseries port\+\_\+button\+\_\+get\+\_\+tick} ()
+\item 
+void \mbox{\hyperlink{port__button_8c_a738473a5b43f6c92b80ce1d3d6f77ed9}{EXTI15\+\_\+10\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Px10-\/\+Px15 global interrupts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing functions related to the HW of the button FSM. 
+
+This files defines an internal struct which coontains the HW information of the
+
+\begin{DoxyAuthor}{Author}
+Alvaro Rodriguez Gabaldon 
+
+Miguel Lobo Benito 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+fecha 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{port__button_8c_a738473a5b43f6c92b80ce1d3d6f77ed9}\label{port__button_8c_a738473a5b43f6c92b80ce1d3d6f77ed9}} 
+\index{port\_button.c@{port\_button.c}!EXTI15\_10\_IRQHandler@{EXTI15\_10\_IRQHandler}}
+\index{EXTI15\_10\_IRQHandler@{EXTI15\_10\_IRQHandler}!port\_button.c@{port\_button.c}}
+\doxysubsubsection{\texorpdfstring{EXTI15\_10\_IRQHandler()}{EXTI15\_10\_IRQHandler()}}
+{\footnotesize\ttfamily void EXTI15\+\_\+10\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function handles Px10-\/\+Px15 global interrupts. 
+
+First, this function identifies the line/ pin which has raised the interruption. Then, perform the desired action. Before leaving it cleans the interrupt pending register.
+
+\begin{quote}
+{\bfseries{TO-\/\+DO alumnos}}
+
+✅ 1. Read the value of the GPIO og the user button. Use the BUTTON\+\_\+0\+\_\+\+ID index to get the port and pin from the {\ttfamily buttons\+\_\+arr} ~\newline
+✅ 2. If the value is \mbox{\hyperlink{port__system_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}{HIGH}} means that the button as been released, therefore set the field {\ttfamily flag\+\_\+pressed} to {\ttfamily false} ~\newline
+✅ 3. If the value is \mbox{\hyperlink{port__system_8h_ab811d8c6ff3a505312d3276590444289}{LOW}} means that the button as been pressed, therefore set the field {\ttfamily flag\+\_\+pressed} to {\ttfamily true} ~\newline
+✅ 4. Clean the corresponding bit of the {\ttfamily PR} register ~\newline
+~~~~💡 Recommendation\+: use the macro \mbox{\hyperlink{port__system_8h_ad8e7767483a0c8f878cab29ad46ec656}{BIT\+\_\+\+POS\+\_\+\+TO\+\_\+\+MASK}} ~\newline
+ ~~~~💡 {\bfseries{To clean an interrupt in the {\itshape Pending Register} ({\ttfamily PR}) we must write \textquotesingle{}1\textquotesingle{} in the corresponding bit}}. {\itshape Look at the example in section \char`\"{}3.\+9.\+7. Ejemplo de interrupción externa\char`\"{} of the reference book.} You can also find this out by consulting the {\itshape reference manual} (section \char`\"{}10.\+3.\+6 Pending register (\+EXTI\+\_\+\+PR)\char`\"{}) $\ast$ ~\newline
+ \end{quote}
+~\newline

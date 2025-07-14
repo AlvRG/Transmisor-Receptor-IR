@@ -1,0 +1,46 @@
+\hypertarget{fsm_8h_source}{}\doxysection{fsm.\+h}
+\label{fsm_8h_source}\index{sdg/projects/retina-\/main-\/definitivo/common/include/fsm.h@{sdg/projects/retina-\/main-\/definitivo/common/include/fsm.h}}
+\mbox{\hyperlink{fsm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ FSM\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ FSM\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ Standard\ C\ includes\ */}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{/*\ Typedefs\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfsm__t}{fsm\_t}}\ \mbox{\hyperlink{structfsm__t}{fsm\_t}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ bool\ (*\mbox{\hyperlink{fsm_8h_a0b58a6e1c0707054a9f0df9379684083}{fsm\_input\_func\_t}})(\mbox{\hyperlink{structfsm__t}{fsm\_t}}\ *);\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{fsm_8h_ab9f0952fdbd6e84f1faa86547e1b42f5}{fsm\_output\_func\_t}})(\mbox{\hyperlink{structfsm__t}{fsm\_t}}\ *);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfsm__trans__t}{fsm\_trans\_t}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfsm__trans__t_adc67dd348bb6fc59cb4d59d598747274}{orig\_state}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{fsm_8h_a0b58a6e1c0707054a9f0df9379684083}{fsm\_input\_func\_t}}\ \mbox{\hyperlink{structfsm__trans__t_a88eefe4fbfe9c61845f867752d692ef1}{in}};\ \ \ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfsm__trans__t_af125a66cfa85df848aa173961218e809}{dest\_state}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{fsm_8h_ab9f0952fdbd6e84f1faa86547e1b42f5}{fsm\_output\_func\_t}}\ \mbox{\hyperlink{structfsm__trans__t_aa14b0ae2ea26e60da884d09f281f7302}{out}};\ }
+\DoxyCodeLine{00041\ \}\ \mbox{\hyperlink{structfsm__trans__t}{fsm\_trans\_t}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfsm__t}{fsm\_t}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfsm__t_ab250e61dab922ea23423a06fd1e6ea34}{current\_state}};\ }
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{structfsm__trans__t}{fsm\_trans\_t}}\ *\mbox{\hyperlink{structfsm__t_a6c3c1228679eb15c274cc8bf30c334a0}{p\_tt}};\ }
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{/*\ Function\ prototypes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00061\ \mbox{\hyperlink{structfsm__t}{fsm\_t}}\ *\mbox{\hyperlink{fsm_8h_a9b0d45e79c69edb09b4c7679a819f0bf}{fsm\_new}}(\mbox{\hyperlink{structfsm__trans__t}{fsm\_trans\_t}}\ *p\_tt);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{fsm_8h_aee4d00cd2b36015dfbe8ab3eb02a7d7a}{fsm\_init}}(\mbox{\hyperlink{structfsm__t}{fsm\_t}}\ *p\_fsm,\ \mbox{\hyperlink{structfsm__trans__t}{fsm\_trans\_t}}\ *p\_tt);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{fsm_8h_ab9f849bd2d80e5efaa320ddb59b4b246}{fsm\_fire}}(\mbox{\hyperlink{structfsm__t}{fsm\_t}}\ *p\_fsm);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{fsm_8h_a42ab412fe7a2ac8efb84e813d638128c}{fsm\_destroy}}(\mbox{\hyperlink{structfsm__t}{fsm\_t}}\ *p\_fsm);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FSM\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

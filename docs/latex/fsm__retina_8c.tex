@@ -1,0 +1,96 @@
+\hypertarget{fsm__retina_8c}{}\doxysection{sdg/projects/retina-\/main-\/definitivo/common/src/fsm\+\_\+retina.c File Reference}
+\label{fsm__retina_8c}\index{sdg/projects/retina-\/main-\/definitivo/common/src/fsm\_retina.c@{sdg/projects/retina-\/main-\/definitivo/common/src/fsm\_retina.c}}
+
+
+Retina FSM main file.  
+
+
+{\ttfamily \#include \char`\"{}fsm\+\_\+retina.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fsm\+\_\+button.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fsm\+\_\+tx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}commands.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfsm__retina__t}{fsm\+\_\+retina\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to define the Retina FSM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fsm__retina_8c_a1493910690d9420cf8b135851ed55211}{COMMANDS\+\_\+\+MEMORY\+\_\+\+SIZE}}~3
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{fsm__retina_8c_adf764cbdea00d65edcd07bb9953ad2b7a40343b646b045e2d3029021122dc3460}{WAIT\+\_\+\+TX}} = 0
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fsm__retina_8c_a106c0797b6ed64f21d1d9d8dd0c4f03f}\label{fsm__retina_8c_a106c0797b6ed64f21d1d9d8dd0c4f03f}} 
+\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$ {\bfseries fsm\+\_\+retina\+\_\+new} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+fsm\+\_\+button, uint32\+\_\+t button\+\_\+press\+\_\+time, \mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+fsm\+\_\+tx)
+\item 
+\mbox{\Hypertarget{fsm__retina_8c_ae83d1ef8f6bf3ab54c3ffcb982831295}\label{fsm__retina_8c_ae83d1ef8f6bf3ab54c3ffcb982831295}} 
+void {\bfseries fsm\+\_\+retina\+\_\+init} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+this, \mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+fsm\+\_\+button, uint32\+\_\+t button\+\_\+press\+\_\+time, \mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+fsm\+\_\+tx)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfsm__trans__t}{fsm\+\_\+trans\+\_\+t}} \mbox{\hyperlink{fsm__retina_8c_a0654c24f16caff3a93f81f9164cb12db}{fsm\+\_\+trans\+\_\+retina}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Retina FSM main file. 
+
+\begin{DoxyAuthor}{Author}
+Alvaro Rodriguez Gabaldon 
+
+Miguel Lobo Benito 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+fecha 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fsm__retina_8c_a1493910690d9420cf8b135851ed55211}\label{fsm__retina_8c_a1493910690d9420cf8b135851ed55211}} 
+\index{fsm\_retina.c@{fsm\_retina.c}!COMMANDS\_MEMORY\_SIZE@{COMMANDS\_MEMORY\_SIZE}}
+\index{COMMANDS\_MEMORY\_SIZE@{COMMANDS\_MEMORY\_SIZE}!fsm\_retina.c@{fsm\_retina.c}}
+\doxysubsubsection{\texorpdfstring{COMMANDS\_MEMORY\_SIZE}{COMMANDS\_MEMORY\_SIZE}}
+{\footnotesize\ttfamily \#define COMMANDS\+\_\+\+MEMORY\+\_\+\+SIZE~3}
+
+Number of NEC commands stored in the memory of the system Retina 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{fsm__retina_8c_adf764cbdea00d65edcd07bb9953ad2b7}\label{fsm__retina_8c_adf764cbdea00d65edcd07bb9953ad2b7}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAIT\_TX@{WAIT\_TX}!fsm\_retina.c@{fsm\_retina.c}}\index{fsm\_retina.c@{fsm\_retina.c}!WAIT\_TX@{WAIT\_TX}}}\mbox{\Hypertarget{fsm__retina_8c_adf764cbdea00d65edcd07bb9953ad2b7a40343b646b045e2d3029021122dc3460}\label{fsm__retina_8c_adf764cbdea00d65edcd07bb9953ad2b7a40343b646b045e2d3029021122dc3460}} 
+WAIT\+\_\+\+TX&{\bfseries{Single state in Version 2}}. State to wait in transmission mode \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{fsm__retina_8c_a0654c24f16caff3a93f81f9164cb12db}\label{fsm__retina_8c_a0654c24f16caff3a93f81f9164cb12db}} 
+\index{fsm\_retina.c@{fsm\_retina.c}!fsm\_trans\_retina@{fsm\_trans\_retina}}
+\index{fsm\_trans\_retina@{fsm\_trans\_retina}!fsm\_retina.c@{fsm\_retina.c}}
+\doxysubsubsection{\texorpdfstring{fsm\_trans\_retina}{fsm\_trans\_retina}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfsm__trans__t}{fsm\+\_\+trans\+\_\+t}} fsm\+\_\+trans\+\_\+retina\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{fsm__retina_8c_adf764cbdea00d65edcd07bb9953ad2b7a40343b646b045e2d3029021122dc3460}{WAIT\_TX}},\ check\_short\_pressed,\ \mbox{\hyperlink{fsm__retina_8c_adf764cbdea00d65edcd07bb9953ad2b7a40343b646b045e2d3029021122dc3460}{WAIT\_TX}},\ do\_send\_next\_msg\},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/1\ ,\ NULL\ ,\ -\/1,\ NULL\ \},}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

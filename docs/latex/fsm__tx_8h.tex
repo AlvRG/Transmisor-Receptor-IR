@@ -1,0 +1,144 @@
+\hypertarget{fsm__tx_8h}{}\doxysection{sdg/projects/retina-\/main-\/definitivo/common/include/fsm\+\_\+tx.h File Reference}
+\label{fsm__tx_8h}\index{sdg/projects/retina-\/main-\/definitivo/common/include/fsm\_tx.h@{sdg/projects/retina-\/main-\/definitivo/common/include/fsm\_tx.h}}
+
+
+Header for \mbox{\hyperlink{fsm__tx_8c}{fsm\+\_\+tx.\+c}} file.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}fsm.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fsm__tx_8h_ae9d591eb1246aa54fb81895171ee85b7}{NEC\+\_\+\+TX\+\_\+\+TIMER\+\_\+\+TICK\+\_\+\+BASE\+\_\+\+US}}~56.\+25
+\item 
+\#define \mbox{\hyperlink{fsm__tx_8h_a1fe0eb3ef27538028de0715187b286f4}{NEC\+\_\+\+TX\+\_\+\+PROLOGUE\+\_\+\+TICKS\+\_\+\+ON}}~160
+\item 
+\#define \mbox{\hyperlink{fsm__tx_8h_acdf0dcfdf884909f2ac7e9437f53dbe2}{NEC\+\_\+\+TX\+\_\+\+PROLOGUE\+\_\+\+TICKS\+\_\+\+OFF}}~80
+\item 
+\#define \mbox{\hyperlink{fsm__tx_8h_a98d35da88d39f9774627d4e221981059}{NEC\+\_\+\+TX\+\_\+\+SYM\+\_\+0\+\_\+\+TICKS\+\_\+\+ON}}~10
+\item 
+\#define \mbox{\hyperlink{fsm__tx_8h_a356e8d95a02e648b04725be84223c198}{NEC\+\_\+\+TX\+\_\+\+SYM\+\_\+0\+\_\+\+TICKS\+\_\+\+OFF}}~10
+\item 
+\#define \mbox{\hyperlink{fsm__tx_8h_a6d087692fac4d84841afe4e20218f0fc}{NEC\+\_\+\+TX\+\_\+\+SYM\+\_\+1\+\_\+\+TICKS\+\_\+\+ON}}~10
+\item 
+\#define \mbox{\hyperlink{fsm__tx_8h_a8b0c2b4ac3bade952766d7e1005853f0}{NEC\+\_\+\+TX\+\_\+\+SYM\+\_\+1\+\_\+\+TICKS\+\_\+\+OFF}}~30
+\item 
+\#define \mbox{\hyperlink{fsm__tx_8h_af92fc511a72169422811e1db56515d4b}{NEC\+\_\+\+TX\+\_\+\+EPILOGUE\+\_\+\+TICKS\+\_\+\+ON}}~10
+\item 
+\#define \mbox{\hyperlink{fsm__tx_8h_a4af4ccc200839eb817a5038f50677339}{NEC\+\_\+\+TX\+\_\+\+EPILOGUE\+\_\+\+TICKS\+\_\+\+OFF}}~3560
+\item 
+\#define \mbox{\hyperlink{fsm__tx_8h_a7e17a8dce23cfe2ae53bb2d458fd2ce5}{NEC\+\_\+\+PWM\+\_\+\+FREQ\+\_\+\+HZ}}~38000
+\item 
+\#define \mbox{\hyperlink{fsm__tx_8h_a870c7c9b799d53488e23aa51e2197447}{NEC\+\_\+\+PWM\+\_\+\+DC}}~0.\+35
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fsm__tx_8h_a8fa7f3f42a8b8c205a4fc90ecb092647}\label{fsm__tx_8h_a8fa7f3f42a8b8c205a4fc90ecb092647}} 
+\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$ {\bfseries fsm\+\_\+tx\+\_\+new} (uint8\+\_\+t tx\+\_\+id)
+\item 
+\mbox{\Hypertarget{fsm__tx_8h_ab6e752ce58e13cce38506f4a86fc229b}\label{fsm__tx_8h_ab6e752ce58e13cce38506f4a86fc229b}} 
+void {\bfseries fsm\+\_\+tx\+\_\+init} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+this, uint8\+\_\+t tx\+\_\+id)
+\item 
+\mbox{\Hypertarget{fsm__tx_8h_a2b5ff29c5e73b66861fc6180f1102da8}\label{fsm__tx_8h_a2b5ff29c5e73b66861fc6180f1102da8}} 
+void {\bfseries fsm\+\_\+tx\+\_\+set\+\_\+code} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+this, uint32\+\_\+t code)
+\item 
+\mbox{\Hypertarget{fsm__tx_8h_a8345283baebe4201a8d28384880fd105}\label{fsm__tx_8h_a8345283baebe4201a8d28384880fd105}} 
+void {\bfseries fsm\+\_\+send\+\_\+\+NEC\+\_\+code} (uint8\+\_\+t tx\+\_\+id, uint32\+\_\+t code)
+\item 
+\mbox{\Hypertarget{fsm__tx_8h_ab22a966071815b96ca4761b99280d558}\label{fsm__tx_8h_ab22a966071815b96ca4761b99280d558}} 
+bool {\bfseries fsm\+\_\+tx\+\_\+check\+\_\+activity} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+this)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header for \mbox{\hyperlink{fsm__tx_8c}{fsm\+\_\+tx.\+c}} file. 
+
+\begin{DoxyAuthor}{Author}
+Alvaro Rodriguez Gabaldon 
+
+Miguel Lobo Benito 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+fecha 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fsm__tx_8h_a870c7c9b799d53488e23aa51e2197447}\label{fsm__tx_8h_a870c7c9b799d53488e23aa51e2197447}} 
+\index{fsm\_tx.h@{fsm\_tx.h}!NEC\_PWM\_DC@{NEC\_PWM\_DC}}
+\index{NEC\_PWM\_DC@{NEC\_PWM\_DC}!fsm\_tx.h@{fsm\_tx.h}}
+\doxysubsubsection{\texorpdfstring{NEC\_PWM\_DC}{NEC\_PWM\_DC}}
+{\footnotesize\ttfamily \#define NEC\+\_\+\+PWM\+\_\+\+DC~0.\+35}
+
+PWM duty cycle 0-\/1 ~\newline
+ \mbox{\Hypertarget{fsm__tx_8h_a7e17a8dce23cfe2ae53bb2d458fd2ce5}\label{fsm__tx_8h_a7e17a8dce23cfe2ae53bb2d458fd2ce5}} 
+\index{fsm\_tx.h@{fsm\_tx.h}!NEC\_PWM\_FREQ\_HZ@{NEC\_PWM\_FREQ\_HZ}}
+\index{NEC\_PWM\_FREQ\_HZ@{NEC\_PWM\_FREQ\_HZ}!fsm\_tx.h@{fsm\_tx.h}}
+\doxysubsubsection{\texorpdfstring{NEC\_PWM\_FREQ\_HZ}{NEC\_PWM\_FREQ\_HZ}}
+{\footnotesize\ttfamily \#define NEC\+\_\+\+PWM\+\_\+\+FREQ\+\_\+\+HZ~38000}
+
+PWM timer frequency in Hz \mbox{\Hypertarget{fsm__tx_8h_a4af4ccc200839eb817a5038f50677339}\label{fsm__tx_8h_a4af4ccc200839eb817a5038f50677339}} 
+\index{fsm\_tx.h@{fsm\_tx.h}!NEC\_TX\_EPILOGUE\_TICKS\_OFF@{NEC\_TX\_EPILOGUE\_TICKS\_OFF}}
+\index{NEC\_TX\_EPILOGUE\_TICKS\_OFF@{NEC\_TX\_EPILOGUE\_TICKS\_OFF}!fsm\_tx.h@{fsm\_tx.h}}
+\doxysubsubsection{\texorpdfstring{NEC\_TX\_EPILOGUE\_TICKS\_OFF}{NEC\_TX\_EPILOGUE\_TICKS\_OFF}}
+{\footnotesize\ttfamily \#define NEC\+\_\+\+TX\+\_\+\+EPILOGUE\+\_\+\+TICKS\+\_\+\+OFF~3560}
+
+Number of time base ticks for epilogue OFF in transmission $\sim$200 miliseconds \mbox{\Hypertarget{fsm__tx_8h_af92fc511a72169422811e1db56515d4b}\label{fsm__tx_8h_af92fc511a72169422811e1db56515d4b}} 
+\index{fsm\_tx.h@{fsm\_tx.h}!NEC\_TX\_EPILOGUE\_TICKS\_ON@{NEC\_TX\_EPILOGUE\_TICKS\_ON}}
+\index{NEC\_TX\_EPILOGUE\_TICKS\_ON@{NEC\_TX\_EPILOGUE\_TICKS\_ON}!fsm\_tx.h@{fsm\_tx.h}}
+\doxysubsubsection{\texorpdfstring{NEC\_TX\_EPILOGUE\_TICKS\_ON}{NEC\_TX\_EPILOGUE\_TICKS\_ON}}
+{\footnotesize\ttfamily \#define NEC\+\_\+\+TX\+\_\+\+EPILOGUE\+\_\+\+TICKS\+\_\+\+ON~10}
+
+Number of time base ticks for epilogue ON in transmission ~\newline
+ \mbox{\Hypertarget{fsm__tx_8h_acdf0dcfdf884909f2ac7e9437f53dbe2}\label{fsm__tx_8h_acdf0dcfdf884909f2ac7e9437f53dbe2}} 
+\index{fsm\_tx.h@{fsm\_tx.h}!NEC\_TX\_PROLOGUE\_TICKS\_OFF@{NEC\_TX\_PROLOGUE\_TICKS\_OFF}}
+\index{NEC\_TX\_PROLOGUE\_TICKS\_OFF@{NEC\_TX\_PROLOGUE\_TICKS\_OFF}!fsm\_tx.h@{fsm\_tx.h}}
+\doxysubsubsection{\texorpdfstring{NEC\_TX\_PROLOGUE\_TICKS\_OFF}{NEC\_TX\_PROLOGUE\_TICKS\_OFF}}
+{\footnotesize\ttfamily \#define NEC\+\_\+\+TX\+\_\+\+PROLOGUE\+\_\+\+TICKS\+\_\+\+OFF~80}
+
+Number of time base ticks for prologue OFF in transmission ~\newline
+ \mbox{\Hypertarget{fsm__tx_8h_a1fe0eb3ef27538028de0715187b286f4}\label{fsm__tx_8h_a1fe0eb3ef27538028de0715187b286f4}} 
+\index{fsm\_tx.h@{fsm\_tx.h}!NEC\_TX\_PROLOGUE\_TICKS\_ON@{NEC\_TX\_PROLOGUE\_TICKS\_ON}}
+\index{NEC\_TX\_PROLOGUE\_TICKS\_ON@{NEC\_TX\_PROLOGUE\_TICKS\_ON}!fsm\_tx.h@{fsm\_tx.h}}
+\doxysubsubsection{\texorpdfstring{NEC\_TX\_PROLOGUE\_TICKS\_ON}{NEC\_TX\_PROLOGUE\_TICKS\_ON}}
+{\footnotesize\ttfamily \#define NEC\+\_\+\+TX\+\_\+\+PROLOGUE\+\_\+\+TICKS\+\_\+\+ON~160}
+
+Number of time base ticks for prologue ON in transmission ~\newline
+ \mbox{\Hypertarget{fsm__tx_8h_a356e8d95a02e648b04725be84223c198}\label{fsm__tx_8h_a356e8d95a02e648b04725be84223c198}} 
+\index{fsm\_tx.h@{fsm\_tx.h}!NEC\_TX\_SYM\_0\_TICKS\_OFF@{NEC\_TX\_SYM\_0\_TICKS\_OFF}}
+\index{NEC\_TX\_SYM\_0\_TICKS\_OFF@{NEC\_TX\_SYM\_0\_TICKS\_OFF}!fsm\_tx.h@{fsm\_tx.h}}
+\doxysubsubsection{\texorpdfstring{NEC\_TX\_SYM\_0\_TICKS\_OFF}{NEC\_TX\_SYM\_0\_TICKS\_OFF}}
+{\footnotesize\ttfamily \#define NEC\+\_\+\+TX\+\_\+\+SYM\+\_\+0\+\_\+\+TICKS\+\_\+\+OFF~10}
+
+Number of time base ticks for symbol 0 OFF in transmission ~\newline
+ \mbox{\Hypertarget{fsm__tx_8h_a98d35da88d39f9774627d4e221981059}\label{fsm__tx_8h_a98d35da88d39f9774627d4e221981059}} 
+\index{fsm\_tx.h@{fsm\_tx.h}!NEC\_TX\_SYM\_0\_TICKS\_ON@{NEC\_TX\_SYM\_0\_TICKS\_ON}}
+\index{NEC\_TX\_SYM\_0\_TICKS\_ON@{NEC\_TX\_SYM\_0\_TICKS\_ON}!fsm\_tx.h@{fsm\_tx.h}}
+\doxysubsubsection{\texorpdfstring{NEC\_TX\_SYM\_0\_TICKS\_ON}{NEC\_TX\_SYM\_0\_TICKS\_ON}}
+{\footnotesize\ttfamily \#define NEC\+\_\+\+TX\+\_\+\+SYM\+\_\+0\+\_\+\+TICKS\+\_\+\+ON~10}
+
+Number of time base ticks for symbol 0 ON in transmission ~\newline
+ \mbox{\Hypertarget{fsm__tx_8h_a8b0c2b4ac3bade952766d7e1005853f0}\label{fsm__tx_8h_a8b0c2b4ac3bade952766d7e1005853f0}} 
+\index{fsm\_tx.h@{fsm\_tx.h}!NEC\_TX\_SYM\_1\_TICKS\_OFF@{NEC\_TX\_SYM\_1\_TICKS\_OFF}}
+\index{NEC\_TX\_SYM\_1\_TICKS\_OFF@{NEC\_TX\_SYM\_1\_TICKS\_OFF}!fsm\_tx.h@{fsm\_tx.h}}
+\doxysubsubsection{\texorpdfstring{NEC\_TX\_SYM\_1\_TICKS\_OFF}{NEC\_TX\_SYM\_1\_TICKS\_OFF}}
+{\footnotesize\ttfamily \#define NEC\+\_\+\+TX\+\_\+\+SYM\+\_\+1\+\_\+\+TICKS\+\_\+\+OFF~30}
+
+Number of time base ticks for symbol 1 OFF in transmission ~\newline
+ \mbox{\Hypertarget{fsm__tx_8h_a6d087692fac4d84841afe4e20218f0fc}\label{fsm__tx_8h_a6d087692fac4d84841afe4e20218f0fc}} 
+\index{fsm\_tx.h@{fsm\_tx.h}!NEC\_TX\_SYM\_1\_TICKS\_ON@{NEC\_TX\_SYM\_1\_TICKS\_ON}}
+\index{NEC\_TX\_SYM\_1\_TICKS\_ON@{NEC\_TX\_SYM\_1\_TICKS\_ON}!fsm\_tx.h@{fsm\_tx.h}}
+\doxysubsubsection{\texorpdfstring{NEC\_TX\_SYM\_1\_TICKS\_ON}{NEC\_TX\_SYM\_1\_TICKS\_ON}}
+{\footnotesize\ttfamily \#define NEC\+\_\+\+TX\+\_\+\+SYM\+\_\+1\+\_\+\+TICKS\+\_\+\+ON~10}
+
+Number of time base ticks for symbol 1 ON in transmission ~\newline
+ \mbox{\Hypertarget{fsm__tx_8h_ae9d591eb1246aa54fb81895171ee85b7}\label{fsm__tx_8h_ae9d591eb1246aa54fb81895171ee85b7}} 
+\index{fsm\_tx.h@{fsm\_tx.h}!NEC\_TX\_TIMER\_TICK\_BASE\_US@{NEC\_TX\_TIMER\_TICK\_BASE\_US}}
+\index{NEC\_TX\_TIMER\_TICK\_BASE\_US@{NEC\_TX\_TIMER\_TICK\_BASE\_US}!fsm\_tx.h@{fsm\_tx.h}}
+\doxysubsubsection{\texorpdfstring{NEC\_TX\_TIMER\_TICK\_BASE\_US}{NEC\_TX\_TIMER\_TICK\_BASE\_US}}
+{\footnotesize\ttfamily \#define NEC\+\_\+\+TX\+\_\+\+TIMER\+\_\+\+TICK\+\_\+\+BASE\+\_\+\+US~56.\+25}
+
+Time base in microseconds to create the ticks for the timer of symbols 

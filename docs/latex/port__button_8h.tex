@@ -1,0 +1,50 @@
+\hypertarget{port__button_8h}{}\doxysection{sdg/projects/retina-\/main-\/definitivo/port/nucleo\+\_\+stm32f446re/include/port\+\_\+button.h File Reference}
+\label{port__button_8h}\index{sdg/projects/retina-\/main-\/definitivo/port/nucleo\_stm32f446re/include/port\_button.h@{sdg/projects/retina-\/main-\/definitivo/port/nucleo\_stm32f446re/include/port\_button.h}}
+
+
+Header for \mbox{\hyperlink{port__button_8c}{port\+\_\+button.\+c}} file.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}port\+\_\+system.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{port__button_8h_a20004e90fe8f26300e72e57dc2599db7}\label{port__button_8h_a20004e90fe8f26300e72e57dc2599db7}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+ID}~0 /$\ast$Button identifier$\ast$/
+\item 
+\mbox{\Hypertarget{port__button_8h_a24ba5eee4080ae7aba92339df880cb23}\label{port__button_8h_a24ba5eee4080ae7aba92339df880cb23}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+GPIO}~GPIOC /$\ast$Button GPIO port$\ast$/
+\item 
+\mbox{\Hypertarget{port__button_8h_a6cb077072b69f695f7bcc057da12919f}\label{port__button_8h_a6cb077072b69f695f7bcc057da12919f}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+PIN}~13 /$\ast$Button GPIO pin$\ast$/
+\item 
+\mbox{\Hypertarget{port__button_8h_a6555c9ecb50eb69ad8fa341bf19c1cf1}\label{port__button_8h_a6555c9ecb50eb69ad8fa341bf19c1cf1}} 
+\#define {\bfseries BUTTON\+\_\+0\+\_\+\+DEBOUNCE\+\_\+\+TIME\+\_\+\+MS}~150 /$\ast$Button debounce time$\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{port__button_8h_a8a60ec4a29c03b384c975a7780082ca3}\label{port__button_8h_a8a60ec4a29c03b384c975a7780082ca3}} 
+void {\bfseries port\+\_\+button\+\_\+init} (uint32\+\_\+t button\+\_\+id)
+\item 
+\mbox{\Hypertarget{port__button_8h_aba3babbb7f811461f16f7ab309ee660b}\label{port__button_8h_aba3babbb7f811461f16f7ab309ee660b}} 
+bool {\bfseries port\+\_\+button\+\_\+is\+\_\+pressed} (uint32\+\_\+t button\+\_\+id)
+\item 
+\mbox{\Hypertarget{port__button_8h_a3721657d1ac1da581da5efec19581b7d}\label{port__button_8h_a3721657d1ac1da581da5efec19581b7d}} 
+uint32\+\_\+t {\bfseries port\+\_\+button\+\_\+get\+\_\+tick} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header for \mbox{\hyperlink{port__button_8c}{port\+\_\+button.\+c}} file. 
+
+\begin{DoxyAuthor}{Author}
+Alvaro Rodriguez Gabaldon 
+
+Miguel Lobo Benito 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+fecha 
+\end{DoxyDate}

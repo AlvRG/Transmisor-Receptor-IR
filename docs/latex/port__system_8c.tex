@@ -1,0 +1,532 @@
+\hypertarget{port__system_8c}{}\doxysection{sdg/projects/retina-\/main-\/definitivo/port/nucleo\+\_\+stm32f446re/src/port\+\_\+system.c File Reference}
+\label{port__system_8c}\index{sdg/projects/retina-\/main-\/definitivo/port/nucleo\_stm32f446re/src/port\_system.c@{sdg/projects/retina-\/main-\/definitivo/port/nucleo\_stm32f446re/src/port\_system.c}}
+
+
+File that defines the functions that are related to the access to the specific HW of the microcontroller.  
+
+
+{\ttfamily \#include \char`\"{}port\+\_\+system.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{port__system_8c_aaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\+\_\+\+VALUE}}~((uint32\+\_\+t)16000000)
+\item 
+\mbox{\Hypertarget{port__system_8c_a4735b273dec594b40e0a14a17480a212}\label{port__system_8c_a4735b273dec594b40e0a14a17480a212}} 
+\#define {\bfseries BASE\+\_\+\+MODER\+\_\+\+MASK}~0x03\+UL
+\item 
+\mbox{\Hypertarget{port__system_8c_a2257727f28d81494a3add9368879b8ba}\label{port__system_8c_a2257727f28d81494a3add9368879b8ba}} 
+\#define {\bfseries MODER\+\_\+\+MASK0}~(BASE\+\_\+\+MODER\+\_\+\+MASK $<$$<$ 2$\ast$pin)
+\item 
+\mbox{\Hypertarget{port__system_8c_a55571cab6255301c197f38ac3384ebc2}\label{port__system_8c_a55571cab6255301c197f38ac3384ebc2}} 
+\#define {\bfseries GPIO\+\_\+\+MODE\+\_\+\+MODER}~(mode)
+\item 
+\mbox{\Hypertarget{port__system_8c_a725125c776b4f7b39c74494ebdc183d5}\label{port__system_8c_a725125c776b4f7b39c74494ebdc183d5}} 
+\#define {\bfseries BASE\+\_\+\+PUPDR\+\_\+\+MASK}~0x03\+UL
+\item 
+\mbox{\Hypertarget{port__system_8c_a8a9ae5d32ed1a35d2f141e34eba9639f}\label{port__system_8c_a8a9ae5d32ed1a35d2f141e34eba9639f}} 
+\#define {\bfseries PUPDR\+\_\+\+MASK0}~(BASE\+\_\+\+PUPDR\+\_\+\+MASK $<$$<$ 2$\ast$pin)
+\item 
+\mbox{\Hypertarget{port__system_8c_ada63de5a9d2a4cc2d4954c6359449168}\label{port__system_8c_ada63de5a9d2a4cc2d4954c6359449168}} 
+\#define {\bfseries GPIO\+\_\+\+MODE\+\_\+\+PUPDR}~(pupd)
+\item 
+\mbox{\Hypertarget{port__system_8c_a1bc0115fb74dad22793f3d9cb2328578}\label{port__system_8c_a1bc0115fb74dad22793f3d9cb2328578}} 
+\#define {\bfseries EXTI\+\_\+\+EMR\+\_\+\+MASK}~(0x01 $<$$<$ pin)
+\item 
+\mbox{\Hypertarget{port__system_8c_a73f96fc2b447ea3f442b07d4e5fc0900}\label{port__system_8c_a73f96fc2b447ea3f442b07d4e5fc0900}} 
+\#define {\bfseries EXTI\+\_\+\+IMR\+\_\+\+MASK}~(0x01 $<$$<$ pin)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{port__system_8c_a93f514700ccf00d08dbdcff7f1224eb2}{System\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Setup the microcontroller system Initialize the FPU setting, vector table location and External memory configuration. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{port__system_8c_a128d80ffebb4b4feadb28e757ac257cc}{port\+\_\+system\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em This function is based on the initialization of the HAL Library; it must be the first thing to be executed in the main program (before to call any other functions), it performs the following\+: \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{port__system_8c_a4195733ffd32da0ab22407284b5a94eb}{port\+\_\+system\+\_\+get\+\_\+millis}} ()
+\begin{DoxyCompactList}\small\item\em Get the count of the System tick in milliseconds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{port__system_8c_ae6ca17ba9c9d055d442cf1e4a73be046}{port\+\_\+system\+\_\+delay\+\_\+ms}} (uint32\+\_\+t ms)
+\begin{DoxyCompactList}\small\item\em Wait for some milliseconds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{port__system_8c_aea53d22d21120e209983ae0753b35d87}{port\+\_\+system\+\_\+delay\+\_\+until\+\_\+ms}} (uint32\+\_\+t $\ast$p\+\_\+t, uint32\+\_\+t ms)
+\begin{DoxyCompactList}\small\item\em Wait for some milliseconds from a time reference. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{port__system_8c_a0db5ab1cfb0707984ad278b002fcf7fc}{port\+\_\+system\+\_\+gpio\+\_\+exti\+\_\+enable}} (uint8\+\_\+t pin, uint8\+\_\+t priority, uint8\+\_\+t subpriority)
+\begin{DoxyCompactList}\small\item\em Enable interrupts of a GPIO line (pin) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{port__system_8c_a57047fe83ed119973a2ee0891e790459}{port\+\_\+system\+\_\+gpio\+\_\+exti\+\_\+disable}} (uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Disable interrupts of a GPIO line (pin) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{port__system_8c_aedba1c00f3e11b81226406c03db75c14}{port\+\_\+system\+\_\+gpio\+\_\+config}} (GPIO\+\_\+\+Type\+Def $\ast$p\+\_\+port, uint8\+\_\+t pin, uint8\+\_\+t mode, uint8\+\_\+t pupd)
+\begin{DoxyCompactList}\small\item\em Configure the mode and pull of a GPIO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{port__system_8c_a69b13031e799a6a96aa8143cb4432f94}{port\+\_\+system\+\_\+gpio\+\_\+config\+\_\+alternate}} (GPIO\+\_\+\+Type\+Def $\ast$p\+\_\+port, uint8\+\_\+t pin, uint8\+\_\+t alternate)
+\begin{DoxyCompactList}\small\item\em Configure the alternate function of a GPIO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{port__system_8c_aaaa8d7afcf0ca35642667612a2dc0b27}{port\+\_\+system\+\_\+gpio\+\_\+config\+\_\+exti}} (GPIO\+\_\+\+Type\+Def $\ast$p\+\_\+port, uint8\+\_\+t pin, uint32\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Configure the external interruption or event of a GPIO. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{port__system_8c_a67c2ddb6c83b821abe663b86bc76a08e}{port\+\_\+system\+\_\+gpio\+\_\+read}} (GPIO\+\_\+\+Type\+Def $\ast$p\+\_\+port, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Read the digital value of a GPIO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{port__system_8c_a7bc1d118b9ff134fe7f982a52b6a4049}{port\+\_\+system\+\_\+gpio\+\_\+write}} (GPIO\+\_\+\+Type\+Def $\ast$p\+\_\+port, uint8\+\_\+t pin, bool value)
+\begin{DoxyCompactList}\small\item\em Write a digital value in a GPIO atomically. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{port__system_8c_ac917b3dece5f90ce4c76aaa36cec3553}{port\+\_\+system\+\_\+gpio\+\_\+toggle}} (GPIO\+\_\+\+Type\+Def $\ast$p\+\_\+port, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Toggle the value of a GPIO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{port__system_8c_ab5e09814056d617c521549e542639b7e}{Sys\+Tick\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles the System tick timer that increments the system millisecond counter (global variable). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{port__system_8c_aa3cd3e43291e81e795d642b79b6088e6}{System\+Core\+Clock}} = \mbox{\hyperlink{port__system_8c_aaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\+\_\+\+VALUE}}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{port__system_8c_a6e1d9cd666f0eacbfde31e9932a93466}{AHBPresc\+Table}} \mbox{[}16\mbox{]} = \{0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9\}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{port__system_8c_a5b4f8b768465842cf854a8f993b375e9}{APBPresc\+Table}} \mbox{[}8\mbox{]} = \{0, 0, 0, 0, 1, 2, 3, 4\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File that defines the functions that are related to the access to the specific HW of the microcontroller. 
+
+\begin{DoxyAuthor}{Author}
+Sistemas Digitales II 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023-\/01-\/01 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{port__system_8c_aaa8c76e274d0f6dd2cefb5d0b17fbc37}\label{port__system_8c_aaa8c76e274d0f6dd2cefb5d0b17fbc37}} 
+\index{port\_system.c@{port\_system.c}!HSI\_VALUE@{HSI\_VALUE}}
+\index{HSI\_VALUE@{HSI\_VALUE}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{HSI\_VALUE}{HSI\_VALUE}}
+{\footnotesize\ttfamily \#define HSI\+\_\+\+VALUE~((uint32\+\_\+t)16000000)}
+
+Value of the Internal oscillator in Hz 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{port__system_8c_ae6ca17ba9c9d055d442cf1e4a73be046}\label{port__system_8c_ae6ca17ba9c9d055d442cf1e4a73be046}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_delay\_ms@{port\_system\_delay\_ms}}
+\index{port\_system\_delay\_ms@{port\_system\_delay\_ms}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_delay\_ms()}{port\_system\_delay\_ms()}}
+{\footnotesize\ttfamily void port\+\_\+system\+\_\+delay\+\_\+ms (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ms }\end{DoxyParamCaption})}
+
+
+
+Wait for some milliseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & Number of milliseconds to wait\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{port__system_8c_aea53d22d21120e209983ae0753b35d87}\label{port__system_8c_aea53d22d21120e209983ae0753b35d87}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_delay\_until\_ms@{port\_system\_delay\_until\_ms}}
+\index{port\_system\_delay\_until\_ms@{port\_system\_delay\_until\_ms}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_delay\_until\_ms()}{port\_system\_delay\_until\_ms()}}
+{\footnotesize\ttfamily void port\+\_\+system\+\_\+delay\+\_\+until\+\_\+ms (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{p\+\_\+t,  }\item[{uint32\+\_\+t}]{ms }\end{DoxyParamCaption})}
+
+
+
+Wait for some milliseconds from a time reference. 
+
+\begin{DoxyNote}{Note}
+It also updates the time reference to the system time at return.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+t} & Pointer to the time reference \\
+\hline
+{\em ms} & Number of milliseconds to wait\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{port__system_8c_a4195733ffd32da0ab22407284b5a94eb}\label{port__system_8c_a4195733ffd32da0ab22407284b5a94eb}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_get\_millis@{port\_system\_get\_millis}}
+\index{port\_system\_get\_millis@{port\_system\_get\_millis}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_get\_millis()}{port\_system\_get\_millis()}}
+{\footnotesize\ttfamily uint32\+\_\+t port\+\_\+system\+\_\+get\+\_\+millis (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the count of the System tick in milliseconds. 
+
+\begin{quote}
+{\bfseries{TO-\/\+DO alumnos\+:}}
+
+✅ 1. Return System tick ~\newline
+\end{quote}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{port__system_8c_aedba1c00f3e11b81226406c03db75c14}\label{port__system_8c_aedba1c00f3e11b81226406c03db75c14}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_gpio\_config@{port\_system\_gpio\_config}}
+\index{port\_system\_gpio\_config@{port\_system\_gpio\_config}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_gpio\_config()}{port\_system\_gpio\_config()}}
+{\footnotesize\ttfamily void port\+\_\+system\+\_\+gpio\+\_\+config (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{port,  }\item[{uint8\+\_\+t}]{pin,  }\item[{uint8\+\_\+t}]{mode,  }\item[{uint8\+\_\+t}]{pupd }\end{DoxyParamCaption})}
+
+
+
+Configure the mode and pull of a GPIO. 
+
+\begin{DoxyVerb}  ==============================================================================
+                          ##### How to use GPIOs #####
+  ==============================================================================
+  [..]
+    (#) Enable the GPIO AHB clock using the RCC->AHB1ENR register.
+
+    (#) Configure the GPIO pin.
+        (++) Configure the IO mode.
+        (++) Activate Pull-up, Pull-down resistor.
+        (++) In case of Output or alternate function mode, configure the speed if needed.
+        (++) Configure digital or analog mode.
+        (++) In case of external interrupt/event select the type (interrupt or event) and
+             the corresponding trigger event (rising or falling or both).
+
+    (#) In case of external interrupt/event mode selection, configure NVIC IRQ priority
+        mapped to the EXTI line and enable it using.
+
+    (#) To get the level of a pin configured in input mode use the GPIOx_IDR register.
+
+    (#) To set/reset the level of a pin configured in output mode use the GPIOx_BSRR register
+        to SET (bits 0..15) or RESET (bits 16..31) the GPIO.\end{DoxyVerb}
+ 
+
+\begin{quote}
+{\bfseries{TO-\/\+DO alumnos\+:}}
+
+✅ 1. Enable GPIOx clock in AHB1\+ENR ~\newline
+✅ 2. Set mode in MODER ~\newline
+✅ 3. Set pull up/down configuration \end{quote}
+\begin{DoxyNote}{Note}
+This function performs the GPIO Port Clock Enable. It may occur that a port clock is re-\/enabled, it does not matter if it was already enabled. $\ast$ 
+
+This function enables the AHB1 peripheral clock. After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port of the GPIO (CMSIS struct like) \\
+\hline
+{\em pin} & Pin/line of the GPIO (index from 0 to 15) \\
+\hline
+{\em mode} & Input, output, alternate, or analog \\
+\hline
+{\em pupd} & Pull-\/up, pull-\/down, or no-\/pull\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{port__system_8c_a69b13031e799a6a96aa8143cb4432f94}\label{port__system_8c_a69b13031e799a6a96aa8143cb4432f94}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_gpio\_config\_alternate@{port\_system\_gpio\_config\_alternate}}
+\index{port\_system\_gpio\_config\_alternate@{port\_system\_gpio\_config\_alternate}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_gpio\_config\_alternate()}{port\_system\_gpio\_config\_alternate()}}
+{\footnotesize\ttfamily void port\+\_\+system\+\_\+gpio\+\_\+config\+\_\+alternate (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{port,  }\item[{uint8\+\_\+t}]{pin,  }\item[{uint8\+\_\+t}]{alternate }\end{DoxyParamCaption})}
+
+
+
+Configure the alternate function of a GPIO. 
+
+\begin{quote}
+{\bfseries{TO-\/\+DO alumnos\+:}}
+
+✅ 1. {\bfseries{Create a 4-\/bit mask}} depending on the given {\ttfamily pin} ~\newline
+~\newline
+✅ 2. Clean and set the bits {\bfseries{as shown in the tutorial document}}. ~\newline
+~~~~💡 Clean the corresponding bit on element {\ttfamily 0} or {\ttfamily 1} of the AFR array ({\itshape e.\+g}, {\ttfamily GPIOA-\/\texorpdfstring{$>$}{>}AFR\mbox{[}0\mbox{]}}) ~\newline
+~~~~💡 Set the given value ({\ttfamily alternate}) of the alternate function, using bit shifting, for example. ~\newline
+\end{quote}
+~\newline
+\begin{quote}
+💡 {\bfseries{You can define your own masks for each alternate function (not recommended), or you can use the {\ttfamily \mbox{\hyperlink{port__system_8h_ab10023bfece24287e8d301c535c5eaca}{BASE\+\_\+\+MASK\+\_\+\+TO\+\_\+\+POS(m, p)}}} macro to get the mask of a base mask. Example\+:}} ~\newline
+~~~~A base mask {\ttfamily m} equals {\ttfamily 0x03} ({\ttfamily 0b 0000 0011} in binary) can be shifted {\ttfamily p} equals {\ttfamily 8} positions {\ttfamily \mbox{\hyperlink{port__system_8h_ab10023bfece24287e8d301c535c5eaca}{BASE\+\_\+\+MASK\+\_\+\+TO\+\_\+\+POS(0x03, 8)}}} resulting in {\ttfamily 0x300} ({\ttfamily 0b 0011 0000 0000} in binary). ~\newline
+\end{quote}
+\begin{DoxyNote}{Note}
+The AFR register is a 2-\/element array representing GPIO alternate function high an low registers (GPIOx\+\_\+\+AFRH and GPIOx\+\_\+\+AFRL) ~\newline
+AFRLy\+: Alternate function selection for port x pin y (y = 0..7) ~\newline
+AFRHy\+: Alternate function selection for port x pin y (y = 8..15)
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port of the GPIO (CMSIS struct like) \\
+\hline
+{\em pin} & Pin/line of the GPIO (index from 0 to 15) \\
+\hline
+{\em alternate} & Alternate function number (values from 0 to 15) according to table of the datasheet\+: \char`\"{}\+Table 11. Alternate function\char`\"{}.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{port__system_8c_aaaa8d7afcf0ca35642667612a2dc0b27}\label{port__system_8c_aaaa8d7afcf0ca35642667612a2dc0b27}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_gpio\_config\_exti@{port\_system\_gpio\_config\_exti}}
+\index{port\_system\_gpio\_config\_exti@{port\_system\_gpio\_config\_exti}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_gpio\_config\_exti()}{port\_system\_gpio\_config\_exti()}}
+{\footnotesize\ttfamily void port\+\_\+system\+\_\+gpio\+\_\+config\+\_\+exti (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{port,  }\item[{uint8\+\_\+t}]{pin,  }\item[{uint32\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Configure the external interruption or event of a GPIO. 
+
+\begin{quote}
+{\bfseries{TO-\/\+DO alumnos\+:}}
+
+✅ 1. {\bfseries{Enable the System configuration controller clock (SYSCFG).}} Enable the SYSCFG by setting the bit SYSCFGEN of the peripheral clock enable register (RCC\+\_\+\+APB2\+ENR). The system configuration controller is used here to manage the external interrupt line connection to the GPIOs. ~\newline
+~~~~💡 As usual, you can access to the register ({\ttfamily APB2\+ENR}) as element of the structure {\ttfamily RCC}. You can use the macro {\ttfamily RCC\+\_\+\+APB2\+ENR\+\_\+\+SYSCFGEN} defined in {\ttfamily stm32f446xx.\+h} to set the bit. Look for the \char`\"{}\+RCC\+\_\+\+APB2\+ENR\char`\"{} register in the Reference Manual if you need more information. ~\newline
+~\newline
+✅ 2. {\bfseries{Associate the external interruption line to the given port.}} Clean and set the bits {\bfseries{as shown in the tutorial document}}. ~\newline
+~~~~💡 Depending on the pin number, use the register SYSCFG\+\_\+\+EXTICR1, SYSCFG\+\_\+\+EXTICR2, SYSCFG\+\_\+\+EXTICR3, or SYSCFG\+\_\+\+EXTICR4. The structure {\ttfamily SYSCFG} contains a 4-\/element array called {\ttfamily EXTICR}; the first element ({\ttfamily EXTICR\mbox{[}0\mbox{]}}) configures the register SYSCFG\+\_\+\+EXTICR1, and so on. ~\newline
+~~~~💡 To clean the EXTIx bits, you can create a mask depending on the {\ttfamily pin} value. ~\newline
+~~~~💡 To associate the external interruption to the given port, {\itshape i.\+e.} to set the EXTIx bits, you can create another mask depending on the {\ttfamily port} value. ~\newline
+~\newline
+✅ 3. {\bfseries{Select the direction of the trigger}}\+: rising edge, falling edge, or both, depending on the value of the given {\ttfamily mode}. ~\newline
+~~~~💡 If {\itshape rising edge}\+: activate the corresponding bit on the EXTI\+\_\+\+RTSR register (element {\ttfamily RTSR}) of the {\ttfamily EXTI} structure. ~\newline
+~~~~💡 If {\itshape falling edge}\+: activate the corresponding bit on the EXTI\+\_\+\+FTSR register (element {\ttfamily FTSR}) of the {\ttfamily EXTI} structure. ~\newline
+~~~~💡 If {\itshape both}\+: activate the corresponding bit on both registers. ~\newline
+~\newline
+✅ 4. {\bfseries{Select the interrupt and/or event request}}\+: depending on the value of the given {\ttfamily mode}. ~\newline
+~~~~💡 If {\itshape event request} enable\+: activate the corresponding bit on the EXTI\+\_\+\+EMR register (element {\ttfamily EMR}) of the {\ttfamily EXTI} structure. ~\newline
+~~~~💡 If {\itshape interrupt request} enable\+: activate the corresponding bit on the EXTI\+\_\+\+IMR register (element {\ttfamily IMR}) of the {\ttfamily EXTI} structure. ~\newline
+\end{quote}
+~\newline
+\begin{quote}
+💡 {\bfseries{You can define your own masks for each pin value (not recommended), or you can use the {\ttfamily \mbox{\hyperlink{port__system_8h_ad8e7767483a0c8f878cab29ad46ec656}{BIT\+\_\+\+POS\+\_\+\+TO\+\_\+\+MASK(pin)}}} macro to get the mask of a pin.}} \end{quote}
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port of the GPIO (CMSIS struct like) \\
+\hline
+{\em pin} & Pin/line of the GPIO (index from 0 to 15) \\
+\hline
+{\em mode} & Trigger mode can be a combination (OR) of\+: (i) direction\+: rising edge (0x01), falling edge (0x02), (ii) event request (0x04), or (iii) interrupt request (0x08). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{port__system_8c_a57047fe83ed119973a2ee0891e790459}\label{port__system_8c_a57047fe83ed119973a2ee0891e790459}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_gpio\_exti\_disable@{port\_system\_gpio\_exti\_disable}}
+\index{port\_system\_gpio\_exti\_disable@{port\_system\_gpio\_exti\_disable}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_gpio\_exti\_disable()}{port\_system\_gpio\_exti\_disable()}}
+{\footnotesize\ttfamily void port\+\_\+system\+\_\+gpio\+\_\+exti\+\_\+disable (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Disable interrupts of a GPIO line (pin) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin/line of the GPIO (index from 0 to 15)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{port__system_8c_a0db5ab1cfb0707984ad278b002fcf7fc}\label{port__system_8c_a0db5ab1cfb0707984ad278b002fcf7fc}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_gpio\_exti\_enable@{port\_system\_gpio\_exti\_enable}}
+\index{port\_system\_gpio\_exti\_enable@{port\_system\_gpio\_exti\_enable}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_gpio\_exti\_enable()}{port\_system\_gpio\_exti\_enable()}}
+{\footnotesize\ttfamily void port\+\_\+system\+\_\+gpio\+\_\+exti\+\_\+enable (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin,  }\item[{uint8\+\_\+t}]{priority,  }\item[{uint8\+\_\+t}]{subpriority }\end{DoxyParamCaption})}
+
+
+
+Enable interrupts of a GPIO line (pin) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin/line of the GPIO (index from 0 to 15) \\
+\hline
+{\em priority} & Priority level (from highest priority\+: 0, to lowest priority\+: 15) \\
+\hline
+{\em subpriority} & Subpriority level (from highest priority\+: 0, to lowest priority\+: 15)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{port__system_8c_a67c2ddb6c83b821abe663b86bc76a08e}\label{port__system_8c_a67c2ddb6c83b821abe663b86bc76a08e}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_gpio\_read@{port\_system\_gpio\_read}}
+\index{port\_system\_gpio\_read@{port\_system\_gpio\_read}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_gpio\_read()}{port\_system\_gpio\_read()}}
+{\footnotesize\ttfamily bool port\+\_\+system\+\_\+gpio\+\_\+read (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{port,  }\item[{uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Read the digital value of a GPIO. 
+
+\begin{quote}
+{\bfseries{TO-\/\+DO alumnos\+:}}
+
+✅ 1. {\bfseries{Retrieve the value of the IDR register.}} ~\newline
+~~~~💡 You must cast the read value to return a {\ttfamily bool}. ~\newline
+~~~~💡 You might use the {\ttfamily \mbox{\hyperlink{port__system_8h_ad8e7767483a0c8f878cab29ad46ec656}{BIT\+\_\+\+POS\+\_\+\+TO\+\_\+\+MASK(pin)}}} macro. ~\newline
+~\newline
+✅ 2. {\bfseries{Return the value.}} \end{quote}
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port of the GPIO (CMSIS struct like) \\
+\hline
+{\em pin} & Pin/line of the GPIO (index from 0 to 15)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the GPIO was HIGH 
+
+{\ttfamily false} if the GPIO was LOW 
+\end{DoxyReturn}
+\mbox{\Hypertarget{port__system_8c_ac917b3dece5f90ce4c76aaa36cec3553}\label{port__system_8c_ac917b3dece5f90ce4c76aaa36cec3553}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_gpio\_toggle@{port\_system\_gpio\_toggle}}
+\index{port\_system\_gpio\_toggle@{port\_system\_gpio\_toggle}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_gpio\_toggle()}{port\_system\_gpio\_toggle()}}
+{\footnotesize\ttfamily void port\+\_\+system\+\_\+gpio\+\_\+toggle (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{port,  }\item[{uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Toggle the value of a GPIO. 
+
+\begin{quote}
+{\bfseries{TO-\/\+DO alumnos\+:}}
+
+✅ 1. {\bfseries{Read the value of the GPIO.}} ~\newline
+~\newline
+✅ 2. {\bfseries{Write the opposite value in the GPIO.}} ~\newline
+~~~~💡 You might use functions {\ttfamily \mbox{\hyperlink{port__system_8h_a8fdfc0b2269b65577aab87d7efc4a0ff}{port\+\_\+system\+\_\+gpio\+\_\+read()}}} and {\ttfamily \mbox{\hyperlink{port__system_8h_a5223335de29d50a1c21d7937ac355c9b}{port\+\_\+system\+\_\+gpio\+\_\+write()}}} to help you. ~\newline
+~~~~💡 You might use the macros {\ttfamily HIGH} and {\ttfamily LOW}. ~\newline
+\end{quote}
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port of the GPIO (CMSIS struct like) \\
+\hline
+{\em pin} & Pin/line of the GPIO (index from 0 to 15)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{port__system_8c_a7bc1d118b9ff134fe7f982a52b6a4049}\label{port__system_8c_a7bc1d118b9ff134fe7f982a52b6a4049}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_gpio\_write@{port\_system\_gpio\_write}}
+\index{port\_system\_gpio\_write@{port\_system\_gpio\_write}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_gpio\_write()}{port\_system\_gpio\_write()}}
+{\footnotesize\ttfamily void port\+\_\+system\+\_\+gpio\+\_\+write (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{port,  }\item[{uint8\+\_\+t}]{pin,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Write a digital value in a GPIO atomically. 
+
+\begin{quote}
+{\bfseries{TO-\/\+DO alumnos\+:}}
+
+✅ 1. {\bfseries{Set the corresponding bit value of the BSRR register}} to {\itshape set} or {\itshape reset} the output depending on the given {\ttfamily value}. ~\newline
+~~~~💡 You might use the macros {\ttfamily HIGH} and {\ttfamily LOW}. ~\newline
+~~~~💡 You might use the {\ttfamily \mbox{\hyperlink{port__system_8h_ad8e7767483a0c8f878cab29ad46ec656}{BIT\+\_\+\+POS\+\_\+\+TO\+\_\+\+MASK(pin)}}} macro. ~\newline
+\end{quote}
+\begin{DoxyNote}{Note}
+You can use a +16 offset on the pin index and use the {\ttfamily \mbox{\hyperlink{port__system_8h_ad8e7767483a0c8f878cab29ad46ec656}{BIT\+\_\+\+POS\+\_\+\+TO\+\_\+\+MASK(pin)}}} macro to get the mask when you go to clear a GPIO. Otherwise, you can calculate the pin mask first and then use a 16-\/position left shift of the mask.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port of the GPIO (CMSIS struct like) \\
+\hline
+{\em pin} & Pin/line of the GPIO (index from 0 to 15) \\
+\hline
+{\em value} & Boolean value to set the GPIO to HIGH (1, {\ttfamily true}) or LOW (0, {\ttfamily false})\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{port__system_8c_a128d80ffebb4b4feadb28e757ac257cc}\label{port__system_8c_a128d80ffebb4b4feadb28e757ac257cc}} 
+\index{port\_system.c@{port\_system.c}!port\_system\_init@{port\_system\_init}}
+\index{port\_system\_init@{port\_system\_init}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{port\_system\_init()}{port\_system\_init()}}
+{\footnotesize\ttfamily size\+\_\+t port\+\_\+system\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is based on the initialization of the HAL Library; it must be the first thing to be executed in the main program (before to call any other functions), it performs the following\+: 
+
+
+\begin{DoxyItemize}
+\item Configure the Flash prefetch, instruction and Data caches.
+\item Configures the Sys\+Tick to generate an interrupt each 1 millisecond, which is clocked by the HSI (at this stage, the clock is not yet configured and thus the system is running from the internal HSI at 16 MHz).
+\item Set NVIC Group Priority to 4. NVIC\+\_\+\+PRIORITYGROUP\+\_\+4\+: 4 bits for preemption priority 0 bits for subpriority
+\item Configure the system clock
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Sys\+Tick is used as time base for the delay functions. When using the HAL, the application needs to ensure that the Sys\+Tick time base is always set to 1 millisecond to have correct HAL operation. When the NVIC\+\_\+\+PRIORITYGROUP\+\_\+0 is selected, IRQ preemption is no more possible. The pending IRQ priority will be managed only by the subpriority. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em Init} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{port__system_8c_a93f514700ccf00d08dbdcff7f1224eb2}\label{port__system_8c_a93f514700ccf00d08dbdcff7f1224eb2}} 
+\index{port\_system.c@{port\_system.c}!SystemInit@{SystemInit}}
+\index{SystemInit@{SystemInit}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{SystemInit()}{SystemInit()}}
+{\footnotesize\ttfamily void System\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Setup the microcontroller system Initialize the FPU setting, vector table location and External memory configuration. 
+
+\begin{DoxyNote}{Note}
+This function is called at startup by CMSIS in startup\+\_\+stm32f446xx.\+s. 
+\end{DoxyNote}
+\mbox{\Hypertarget{port__system_8c_ab5e09814056d617c521549e542639b7e}\label{port__system_8c_ab5e09814056d617c521549e542639b7e}} 
+\index{port\_system.c@{port\_system.c}!SysTick\_Handler@{SysTick\_Handler}}
+\index{SysTick\_Handler@{SysTick\_Handler}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{SysTick\_Handler()}{SysTick\_Handler()}}
+{\footnotesize\ttfamily void Sys\+Tick\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function handles the System tick timer that increments the system millisecond counter (global variable). 
+
+\begin{quote}
+{\bfseries{TO-\/\+DO alumnos\+:}}
+
+✅ 1. {\bfseries{Increment the System tick counter {\ttfamily ms\+Ticks} in 1 count.}} ~\newline
+~~~~💡 {\ttfamily ms\+Ticks} is a global {\ttfamily static} variable declared in \mbox{\hyperlink{port__system_8c}{port\+\_\+system.\+c}}. ~\newline
+ \begin{DoxyWarning}{Warning}
+{\bfseries{The variable {\ttfamily ms\+Ticks} must be declared volatile!}} Just because it is modified in this ISR, in order to avoid \href{https://en.wikipedia.org/wiki/Race_condition}{\texttt{ {\itshape race conditions}}} 
+\end{DoxyWarning}
+\end{quote}
+. {\bfseries{Add it to the definition}} after {\itshape static}. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{port__system_8c_a6e1d9cd666f0eacbfde31e9932a93466}\label{port__system_8c_a6e1d9cd666f0eacbfde31e9932a93466}} 
+\index{port\_system.c@{port\_system.c}!AHBPrescTable@{AHBPrescTable}}
+\index{AHBPrescTable@{AHBPrescTable}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{AHBPrescTable}{AHBPrescTable}}
+{\footnotesize\ttfamily const uint8\+\_\+t AHBPresc\+Table\mbox{[}16\mbox{]} = \{0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9\}}
+
+Prescaler values for AHB bus \mbox{\Hypertarget{port__system_8c_a5b4f8b768465842cf854a8f993b375e9}\label{port__system_8c_a5b4f8b768465842cf854a8f993b375e9}} 
+\index{port\_system.c@{port\_system.c}!APBPrescTable@{APBPrescTable}}
+\index{APBPrescTable@{APBPrescTable}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{APBPrescTable}{APBPrescTable}}
+{\footnotesize\ttfamily const uint8\+\_\+t APBPresc\+Table\mbox{[}8\mbox{]} = \{0, 0, 0, 0, 1, 2, 3, 4\}}
+
+Prescaler values for APB bus \mbox{\Hypertarget{port__system_8c_aa3cd3e43291e81e795d642b79b6088e6}\label{port__system_8c_aa3cd3e43291e81e795d642b79b6088e6}} 
+\index{port\_system.c@{port\_system.c}!SystemCoreClock@{SystemCoreClock}}
+\index{SystemCoreClock@{SystemCoreClock}!port\_system.c@{port\_system.c}}
+\doxysubsubsection{\texorpdfstring{SystemCoreClock}{SystemCoreClock}}
+{\footnotesize\ttfamily uint32\+\_\+t System\+Core\+Clock = \mbox{\hyperlink{port__system_8c_aaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\+\_\+\+VALUE}}}
+
+Frequency of the System clock 

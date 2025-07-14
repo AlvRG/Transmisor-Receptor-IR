@@ -1,0 +1,105 @@
+\hypertarget{fsm_8c}{}\doxysection{sdg/projects/retina-\/main-\/definitivo/common/src/fsm.c File Reference}
+\label{fsm_8c}\index{sdg/projects/retina-\/main-\/definitivo/common/src/fsm.c@{sdg/projects/retina-\/main-\/definitivo/common/src/fsm.c}}
+
+
+Library to create Finite State Machines using composition.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}fsm.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$ \mbox{\hyperlink{fsm_8c_a9b0d45e79c69edb09b4c7679a819f0bf}{fsm\+\_\+new}} (\mbox{\hyperlink{structfsm__trans__t}{fsm\+\_\+trans\+\_\+t}} $\ast$p\+\_\+tt)
+\begin{DoxyCompactList}\small\item\em Allocates memory and create a new state machine from a transition table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fsm_8c_aee4d00cd2b36015dfbe8ab3eb02a7d7a}{fsm\+\_\+init}} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+fsm, \mbox{\hyperlink{structfsm__trans__t}{fsm\+\_\+trans\+\_\+t}} $\ast$p\+\_\+tt)
+\begin{DoxyCompactList}\small\item\em Create a new state machine from a table of transitions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fsm_8c_a42ab412fe7a2ac8efb84e813d638128c}{fsm\+\_\+destroy}} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+fsm)
+\begin{DoxyCompactList}\small\item\em It frees the memory previously allocated for the state machine. Once this function is called, the state machine becomes unusable. It is only necessary to call this function if the state machine was previously created by calling the {\ttfamily fsm\+\_\+new} function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fsm_8c_ab9f849bd2d80e5efaa320ddb59b4b246}{fsm\+\_\+fire}} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+fsm)
+\begin{DoxyCompactList}\small\item\em Check the full transition table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Library to create Finite State Machines using composition. 
+
+This library is expected to be used using composition \begin{DoxyAuthor}{Author}
+Teachers from the Departamento de Ingeniería Electrónica. Original authors\+: José M. Moya and Pedro J. Malagón. Latest contributor\+: Román Cárdenas. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023-\/01-\/01 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fsm_8c_a42ab412fe7a2ac8efb84e813d638128c}\label{fsm_8c_a42ab412fe7a2ac8efb84e813d638128c}} 
+\index{fsm.c@{fsm.c}!fsm\_destroy@{fsm\_destroy}}
+\index{fsm\_destroy@{fsm\_destroy}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{fsm\_destroy()}{fsm\_destroy()}}
+{\footnotesize\ttfamily void fsm\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$}]{p\+\_\+fsm }\end{DoxyParamCaption})}
+
+
+
+It frees the memory previously allocated for the state machine. Once this function is called, the state machine becomes unusable. It is only necessary to call this function if the state machine was previously created by calling the {\ttfamily fsm\+\_\+new} function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+fsm} & Pointer to the memory address where the new state machine is located \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fsm_8c_ab9f849bd2d80e5efaa320ddb59b4b246}\label{fsm_8c_ab9f849bd2d80e5efaa320ddb59b4b246}} 
+\index{fsm.c@{fsm.c}!fsm\_fire@{fsm\_fire}}
+\index{fsm\_fire@{fsm\_fire}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{fsm\_fire()}{fsm\_fire()}}
+{\footnotesize\ttfamily void fsm\+\_\+fire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$}]{p\+\_\+fsm }\end{DoxyParamCaption})}
+
+
+
+Check the full transition table. 
+
+It loops through the transition table and, if an input condition is met, it switches to a new state and executes the corresponding output modification function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+fsm} & Pointer to the memory address where the new state machine is located \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fsm_8c_aee4d00cd2b36015dfbe8ab3eb02a7d7a}\label{fsm_8c_aee4d00cd2b36015dfbe8ab3eb02a7d7a}} 
+\index{fsm.c@{fsm.c}!fsm\_init@{fsm\_init}}
+\index{fsm\_init@{fsm\_init}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{fsm\_init()}{fsm\_init()}}
+{\footnotesize\ttfamily void fsm\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$}]{p\+\_\+fsm,  }\item[{\mbox{\hyperlink{structfsm__trans__t}{fsm\+\_\+trans\+\_\+t}} $\ast$}]{p\+\_\+tt }\end{DoxyParamCaption})}
+
+
+
+Create a new state machine from a table of transitions. 
+
+The starting state of the state machine will correspond to the origin state of the first transition found in the transition table. The transition table must end with a null transition \{-\/1, NULL, -\/1, NULL\}. This will allow the state machine to detect that it has reached the end of the table. Unlike {\ttfamily fsm\+\_\+new}, this function does not allocate memory for the state machine. Instead, it uses the memory address provided by the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+fsm} & Pointer to the memory address where the new state machine is located \\
+\hline
+{\em p\+\_\+tt} & Pointer to the state machine transition table \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fsm_8c_a9b0d45e79c69edb09b4c7679a819f0bf}\label{fsm_8c_a9b0d45e79c69edb09b4c7679a819f0bf}} 
+\index{fsm.c@{fsm.c}!fsm\_new@{fsm\_new}}
+\index{fsm\_new@{fsm\_new}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{fsm\_new()}{fsm\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$ fsm\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfsm__trans__t}{fsm\+\_\+trans\+\_\+t}} $\ast$}]{p\+\_\+tt }\end{DoxyParamCaption})}
+
+
+
+Allocates memory and create a new state machine from a transition table. 
+
+The starting state of the state machine will correspond to the origin state of the first transition found in the transition table. The transition table must end with a null transition \{-\/1, NULL, -\/1, NULL\}. In this way, the state machine will be able to detect that it has reached the end of the transition table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+tt} & Pointer to the state machine transition table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fsm\+\_\+t$\ast$ Pointer to the memory address where the new state machine is located 
+\end{DoxyReturn}

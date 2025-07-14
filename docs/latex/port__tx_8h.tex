@@ -1,0 +1,52 @@
+\hypertarget{port__tx_8h}{}\doxysection{sdg/projects/retina-\/main-\/definitivo/port/nucleo\+\_\+stm32f446re/include/port\+\_\+tx.h File Reference}
+\label{port__tx_8h}\index{sdg/projects/retina-\/main-\/definitivo/port/nucleo\_stm32f446re/include/port\_tx.h@{sdg/projects/retina-\/main-\/definitivo/port/nucleo\_stm32f446re/include/port\_tx.h}}
+
+
+Header for \mbox{\hyperlink{port__tx_8c}{port\+\_\+tx.\+c}} file.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{port__tx_8h_a9f986ebb67be794dd8950e9025c7726b}\label{port__tx_8h_a9f986ebb67be794dd8950e9025c7726b}} 
+\#define {\bfseries IR\+\_\+\+TX\+\_\+0\+\_\+\+ID}~0 /$\ast$Infrared transmitter identifier$\ast$/
+\item 
+\mbox{\Hypertarget{port__tx_8h_aff30677062d06630df3f43502c7049bd}\label{port__tx_8h_aff30677062d06630df3f43502c7049bd}} 
+\#define {\bfseries IR\+\_\+\+TX\+\_\+0\+\_\+\+GPIO}~GPIOB /$\ast$Infrared transmitter GPIO port$\ast$/
+\item 
+\mbox{\Hypertarget{port__tx_8h_a42ec5d767d2925457c4afe3fe2907a24}\label{port__tx_8h_a42ec5d767d2925457c4afe3fe2907a24}} 
+\#define {\bfseries IR\+\_\+\+TX\+\_\+0\+\_\+\+PIN}~10 /$\ast$Infrared transmitter GPIO pin$\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{port__tx_8h_ac51d84674ffc60774e009d161edfae9c}\label{port__tx_8h_ac51d84674ffc60774e009d161edfae9c}} 
+void {\bfseries port\+\_\+tx\+\_\+init} (uint8\+\_\+t tx\+\_\+id, bool status)
+\item 
+\mbox{\Hypertarget{port__tx_8h_ac956eeec9531523891318c35be479271}\label{port__tx_8h_ac956eeec9531523891318c35be479271}} 
+void {\bfseries port\+\_\+tx\+\_\+pwm\+\_\+timer\+\_\+set} (uint8\+\_\+t tx\+\_\+id, bool status)
+\item 
+\mbox{\Hypertarget{port__tx_8h_a48d37ef6914352569fcc12dd6939d476}\label{port__tx_8h_a48d37ef6914352569fcc12dd6939d476}} 
+void {\bfseries port\+\_\+tx\+\_\+symbol\+\_\+tmr\+\_\+start} ()
+\item 
+\mbox{\Hypertarget{port__tx_8h_a8c6b0587aaa809e6dcd656b84065142f}\label{port__tx_8h_a8c6b0587aaa809e6dcd656b84065142f}} 
+void {\bfseries port\+\_\+tx\+\_\+symbol\+\_\+tmr\+\_\+stop} ()
+\item 
+\mbox{\Hypertarget{port__tx_8h_a1054e71acf03ca90cfda88fe13f4c0c5}\label{port__tx_8h_a1054e71acf03ca90cfda88fe13f4c0c5}} 
+uint32\+\_\+t {\bfseries port\+\_\+tx\+\_\+tmr\+\_\+get\+\_\+tick} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header for \mbox{\hyperlink{port__tx_8c}{port\+\_\+tx.\+c}} file. 
+
+\begin{DoxyAuthor}{Author}
+Alvaro Rodriguez Gabaldon 
+
+Miguel Lobo Benito 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+fecha 
+\end{DoxyDate}

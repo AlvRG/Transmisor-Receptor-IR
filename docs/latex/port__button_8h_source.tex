@@ -1,0 +1,32 @@
+\hypertarget{port__button_8h_source}{}\doxysection{port\+\_\+button.\+h}
+\label{port__button_8h_source}\index{sdg/projects/retina-\/main-\/definitivo/port/nucleo\_stm32f446re/include/port\_button.h@{sdg/projects/retina-\/main-\/definitivo/port/nucleo\_stm32f446re/include/port\_button.h}}
+\mbox{\hyperlink{port__button_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ PORT\_BUTTON\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ PORT\_BUTTON\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ Standard\ C\ includes\ */}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{port__system_8h}{port\_system.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/*\ HW\ dependent\ includes\ */}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ Defines\ and\ enums\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ Defines\ */}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ BUTTON\_0\_ID\ 0\ }\textcolor{comment}{/*Button\ identifier*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ BUTTON\_0\_GPIO\ GPIOC\ }\textcolor{comment}{/*Button\ GPIO\ port*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ BUTTON\_0\_PIN\ 13\ }\textcolor{comment}{/*Button\ GPIO\ pin*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ BUTTON\_0\_DEBOUNCE\_TIME\_MS\ 150\ }\textcolor{comment}{/*Button\ debounce\ time*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/*\ Function\ prototypes\ and\ explanation\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ port\_button\_init\ (uint32\_t\ button\_id);\ \textcolor{comment}{/*Configure\ the\ HW\ specifications\ of\ a\ given\ button.*/}}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{bool}\ port\_button\_is\_pressed\ (uint32\_t\ button\_id);\ \textcolor{comment}{/*Return\ the\ status\ of\ the\ button\ (pressed\ or\ not)*/}}
+\DoxyCodeLine{00032\ uint32\_t\ port\_button\_get\_tick();\ \textcolor{comment}{/*Return\ the\ count\ of\ the\ System\ tick\ in\ milliseconds.*/}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

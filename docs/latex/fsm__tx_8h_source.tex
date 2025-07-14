@@ -1,0 +1,50 @@
+\hypertarget{fsm__tx_8h_source}{}\doxysection{fsm\+\_\+tx.\+h}
+\label{fsm__tx_8h_source}\index{sdg/projects/retina-\/main-\/definitivo/common/include/fsm\_tx.h@{sdg/projects/retina-\/main-\/definitivo/common/include/fsm\_tx.h}}
+\mbox{\hyperlink{fsm__tx_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ FSM\_TX\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ FSM\_TX\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ Standard\ C\ includes\ */}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{/*\ Other\ includes\ */}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fsm_8h}{fsm.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ Defines\ and\ enums\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ Defines\ */}}
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ NEC\ transmission\ macros\ */}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ NEC\_TX\_TIMER\_TICK\_BASE\_US\ 56.25\ }}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ NEC\_TX\_PROLOGUE\_TICKS\_ON\ \ \ \ 160\ \ \ \ }}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ NEC\_TX\_PROLOGUE\_TICKS\_OFF\ \ 80\ \ \ \ \ }}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ NEC\_TX\_SYM\_0\_TICKS\_ON\ \ \ \ \ \ \ 10\ \ \ \ }}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ NEC\_TX\_SYM\_0\_TICKS\_OFF\ \ \ \ \ 10\ \ \ \ \ }}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ NEC\_TX\_SYM\_1\_TICKS\_ON\ \ \ \ \ \ \ 10\ \ \ \ }}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ NEC\_TX\_SYM\_1\_TICKS\_OFF\ \ \ \ \ \ 30\ \ \ \ }}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ NEC\_TX\_EPILOGUE\_TICKS\_ON\ \ \ \ \ 10\ \ \ }}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ NEC\_TX\_EPILOGUE\_TICKS\_OFF\ 3560\ \ }}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ NEC\_PWM\_FREQ\_HZ\ \ \ \ \ \ \ \ 38000\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ NEC\_PWM\_DC\ \ \ \ \ \ \ \ \ 0.35\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00035\ \textcolor{comment}{/*\ Function\ prototypes\ and\ explanation\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/*Create\ a\ new\ infrared\ transmitter\ FSM.*/}}
+\DoxyCodeLine{00038\ \mbox{\hyperlink{structfsm__t}{fsm\_t}}\ *\ fsm\_tx\_new\ (uint8\_t\ tx\_id);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ \ Initialize\ an\ infrared\ transmitter\ FSM.\ */}}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ fsm\_tx\_init\ (\mbox{\hyperlink{structfsm__t}{fsm\_t}}\ *p\_this,\ uint8\_t\ tx\_id);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{/*\ \ Set\ the\ code\ given*/}}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ fsm\_tx\_set\_code\ (\mbox{\hyperlink{structfsm__t}{fsm\_t}}\ *p\_this,\ uint32\_t\ code);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ \ Start\ the\ process\ to\ transmit\ the\ code\ stored*/}}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ fsm\_send\_NEC\_code\ (uint8\_t\ tx\_id,\ uint32\_t\ code);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{/*Check\ if\ the\ transmitter\ FSM\ is\ active,\ or\ not.\ As\ the\ system\ is\ the\ one\ controlling\ the\ output\ (PWM\ and\ symbol\ timer),\ this\ FSM\ will\ always\ be\ inactive\ and\ will\ wake\ up\ at\ each\ interruption\ of\ the\ symbol\ timer\ or\ PWM\ timer*/}}
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{bool}\ fsm\_tx\_check\_activity\ (\mbox{\hyperlink{structfsm__t}{fsm\_t}}\ *p\_this);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

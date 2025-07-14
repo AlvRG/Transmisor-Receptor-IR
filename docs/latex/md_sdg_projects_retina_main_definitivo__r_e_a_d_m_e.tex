@@ -1,0 +1,47 @@
+Es es el proyecto base del curso 2022-\/2023 para los alumnos de la asignatura de Sistemas Digitales II. Los códigos están parcialmente documentados para que pueda ser interpretado por Doxygen a fin de que pueda tener ejemplos de cómo hacer la documentación de su propio código.
+
+Este proyecto base no compila y debe seguir los pasos del enunciado de la asignatura.
+
+Puedes acceder al vídeo del demostrador del proyecto pinchando en la imagen\+: \href{https://youtu.be/7yMZnfwStgs}{\texttt{ }}
+
+Puedes descargar los códigos desde la página de {\bfseries{\href{https://github.com/sdg2DieUpm/retina}{\texttt{ Github de SDG2}}}}.
+
+Incluya la carpeta {\ttfamily retina} en su directorio {\ttfamily projects} como se muestra a continuación. Recuerde que esta es la estructura de los proyectos de SDG2 para {\bfseries{compilación multiplataforma}} usando VSCode. La diferencia fundamental con la estructura de los \href{https://sdg1dieupm.github.io/c_basics/}{\texttt{ proyectos para SDG1}} es que {\bfseries{contiene}} las carpetas {\ttfamily common} y {\ttfamily port}. También son necesarias las carpetas {\ttfamily drivers} y {\ttfamily svd} a la misma altura de {\ttfamily projects}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{📂sdg}
+\DoxyCodeLine{┣\ 📂drivers}
+\DoxyCodeLine{┃\ ┣\ 📂stm32f4xx}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┣\ 📂CMSIS}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┗\ 📂Drivers}
+\DoxyCodeLine{┃\ ┗\ ┗...}
+\DoxyCodeLine{┣\ 📂projects}
+\DoxyCodeLine{┃\ ┣\ 📦projects.code-\/workspace}
+\DoxyCodeLine{┃\ ┣\ 📂hello}
+\DoxyCodeLine{┃\ ┣\ 📂blink}
+\DoxyCodeLine{┃\ ┣\ 📂retina}
+\DoxyCodeLine{┃\ ┃\ ┣\ 📂.vscode\ \ \ \ }
+\DoxyCodeLine{┃\ ┃\ ┃\ ┣\ 📜launch.json}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┗\ 📜tasks.json}
+\DoxyCodeLine{┃\ ┃\ ┣\ 📂common}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┣\ 📂include}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┣\ 📂src}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┗\ 📜Makefile.common}
+\DoxyCodeLine{┃\ ┃\ ┣\ 📂port}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┃\ ┣\ 📂nucleo\_stm32f446re}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┃\ ┃\ ┣\ 📂include}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┃\ ┃\ ┣\ 📂src}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┃\ ┃\ ┣\ 📜STM32F446RETx\_FLASH.ld}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┃\ ┃\ ┣\ 📜Makefile.port}
+\DoxyCodeLine{┃\ ┃\ ┃\ ┃\ ┃\ ┗\ 📜openocd.cfg}
+\DoxyCodeLine{┃\ ┃\ ┣\ 📂lib}
+\DoxyCodeLine{┃\ ┃\ ┗\ 📜Makefile}
+\DoxyCodeLine{┃\ ┃\ ┗\ ...}
+\DoxyCodeLine{┃\ ┗\ ...}
+\DoxyCodeLine{┗}
+
+\end{DoxyCode}
+ Puede navegar a través del menú lateral por parte de la API generada. El resto de la API del proyecto debe crearla usted. Siga los pasos de la {\itshape Guía de instalación de herramientas para compilación multiplataforma en C} donde se le indica cómo generar la API usando Doxygen.
+
+Puede modificar este fichero README.\+md para documentar su proyecto. Este README.\+md será la portada de su API. Puede poner imágenes, enlaces a vídeos y URLs, hacer tablas, formatear el texto, hacer listas, introducir emojis, etc. Todo debe hacerlo con estilo {\bfseries{Markdown}}. Puede buscar muchos ejemplos en la red y ver cómo usarlo en el \href{https://www.markdownguide.org/basic-syntax/}{\texttt{ sitio web}}. 

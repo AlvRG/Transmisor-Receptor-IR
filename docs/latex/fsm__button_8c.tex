@@ -1,0 +1,52 @@
+\hypertarget{fsm__button_8c}{}\doxysection{sdg/projects/retina-\/main-\/definitivo/common/src/fsm\+\_\+button.c File Reference}
+\label{fsm__button_8c}\index{sdg/projects/retina-\/main-\/definitivo/common/src/fsm\_button.c@{sdg/projects/retina-\/main-\/definitivo/common/src/fsm\_button.c}}
+
+
+Button FSM main file.  
+
+
+{\ttfamily \#include \char`\"{}fsm\+\_\+button.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}port\+\_\+button.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfsm__button__t}{fsm\+\_\+button\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fsm__button_8c_a06fc87d81c62e9abb8790b6e5713c55b}\label{fsm__button_8c_a06fc87d81c62e9abb8790b6e5713c55b}} 
+enum \{ {\bfseries BUTTON\+\_\+\+RELEASED} = 0
+, {\bfseries BUTTON\+\_\+\+RELEASED\+\_\+\+WAIT}
+, {\bfseries BUTTON\+\_\+\+PRESSED}
+, {\bfseries BUTTON\+\_\+\+PRESSED\+\_\+\+WAIT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fsm__button_8c_a43bd9081f35b23c56d23c0e430d886d0}\label{fsm__button_8c_a43bd9081f35b23c56d23c0e430d886d0}} 
+\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$ {\bfseries fsm\+\_\+button\+\_\+new} (uint32\+\_\+t debounce\+\_\+time, uint32\+\_\+t button\+\_\+id)
+\item 
+\mbox{\Hypertarget{fsm__button_8c_adf1e6388ab7f1216269fe912a11cf814}\label{fsm__button_8c_adf1e6388ab7f1216269fe912a11cf814}} 
+uint32\+\_\+t {\bfseries fsm\+\_\+button\+\_\+get\+\_\+duration} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+this)
+\item 
+\mbox{\Hypertarget{fsm__button_8c_ad72c67d37f009c4b627d12be1d00c25f}\label{fsm__button_8c_ad72c67d37f009c4b627d12be1d00c25f}} 
+void {\bfseries fsm\+\_\+button\+\_\+reset\+\_\+duration} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+this)
+\item 
+\mbox{\Hypertarget{fsm__button_8c_a3478c3cda06d0305998a6042ea652604}\label{fsm__button_8c_a3478c3cda06d0305998a6042ea652604}} 
+void {\bfseries fsm\+\_\+button\+\_\+init} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+this, uint32\+\_\+t debounce\+\_\+time, uint32\+\_\+t button\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Button FSM main file. 
+
+\begin{DoxyAuthor}{Author}
+Alvaro Rodriguez Gabaldon 
+
+Miguel Lobo Benito 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+fecha 
+\end{DoxyDate}

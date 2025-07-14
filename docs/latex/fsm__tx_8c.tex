@@ -1,0 +1,50 @@
+\hypertarget{fsm__tx_8c}{}\doxysection{sdg/projects/retina-\/main-\/definitivo/common/src/fsm\+\_\+tx.c File Reference}
+\label{fsm__tx_8c}\index{sdg/projects/retina-\/main-\/definitivo/common/src/fsm\_tx.c@{sdg/projects/retina-\/main-\/definitivo/common/src/fsm\_tx.c}}
+
+
+Infrared transmitter FSM main file.  
+
+
+{\ttfamily \#include \char`\"{}fsm\+\_\+tx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}port\+\_\+tx.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfsm__tx__t}{fsm\+\_\+tx\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fsm__tx_8c_ad64511e893efc2a5a2e4ffad3c67aa88}\label{fsm__tx_8c_ad64511e893efc2a5a2e4ffad3c67aa88}} 
+enum {\bfseries FSM\+\_\+\+TX} \{ {\bfseries WAIT\+\_\+\+TX}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fsm__tx_8c_a2b5ff29c5e73b66861fc6180f1102da8}\label{fsm__tx_8c_a2b5ff29c5e73b66861fc6180f1102da8}} 
+void {\bfseries fsm\+\_\+tx\+\_\+set\+\_\+code} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+this, uint32\+\_\+t code)
+\item 
+\mbox{\Hypertarget{fsm__tx_8c_a8345283baebe4201a8d28384880fd105}\label{fsm__tx_8c_a8345283baebe4201a8d28384880fd105}} 
+void {\bfseries fsm\+\_\+send\+\_\+\+NEC\+\_\+code} (uint8\+\_\+t tx\+\_\+id, uint32\+\_\+t code)
+\item 
+\mbox{\Hypertarget{fsm__tx_8c_a8fa7f3f42a8b8c205a4fc90ecb092647}\label{fsm__tx_8c_a8fa7f3f42a8b8c205a4fc90ecb092647}} 
+\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$ {\bfseries fsm\+\_\+tx\+\_\+new} (uint8\+\_\+t tx\+\_\+id)
+\item 
+\mbox{\Hypertarget{fsm__tx_8c_ab6e752ce58e13cce38506f4a86fc229b}\label{fsm__tx_8c_ab6e752ce58e13cce38506f4a86fc229b}} 
+void {\bfseries fsm\+\_\+tx\+\_\+init} (\mbox{\hyperlink{structfsm__t}{fsm\+\_\+t}} $\ast$p\+\_\+this, uint8\+\_\+t tx\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Infrared transmitter FSM main file. 
+
+\begin{DoxyAuthor}{Author}
+Alvaro Rodriguez Gabaldon 
+
+Miguel Lobo Benito 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+fecha 
+\end{DoxyDate}
